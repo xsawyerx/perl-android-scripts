@@ -152,7 +152,8 @@ my @tests = (
         $droid->dialogCreateHorizontalProgress( $title, $message, 50 );
         $droid->dialogShow();
         for my $x ( 0 .. 50 ) {
-            sleep 0.1;
+            # kinky way of sleeping 0.1
+            select undef, undef, undef, 0.1;
             $droid->dialogSetCurrentProgress($x);
         }
         $droid->dialogDismiss();
