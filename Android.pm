@@ -158,7 +158,7 @@ sub do_rpc {
             if (defined $result) {
                 if (ref $result eq 'HASH') {
                     if (defined $result->{error}) {
-                        $error = to_json($result->{error});
+                        $error = to_json( { error => $result->{error} } );
                     } else {
                         $success = 1;
                     }
