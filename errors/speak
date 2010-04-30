@@ -1,2 +1,4 @@
-No activity found to handle Intent
-{ action=com.google.tts.makeBagel flags=0x10000000 (has extras) }
+"No activity found to handle Intent
+{ action=com.google.tts.makeBagel flags=0x10000000 (has extras) }"
+
+This causes other operations to hang (such as phone_state or ringer_silent)
