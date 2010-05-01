@@ -159,7 +159,7 @@ my @tests = (
         $droid->dialogCreateHorizontalProgress( $title, $message, 50 );
         $droid->dialogShow();
         for my $x ( 0 .. 50 ) {
-            # kinky way of sleeping 0.1
+            # kinky way of sleeping 0.1 instead of using Time::HiRes
             select undef, undef, undef, 0.1;
             $droid->dialogSetCurrentProgress($x);
         }
