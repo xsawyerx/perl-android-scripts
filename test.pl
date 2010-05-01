@@ -29,7 +29,7 @@ sub event_loop {
 my @tests = (
   [ clipboard => sub {
     my $previous = $droid->getClipboard()->{'result'};
-    my $msg      = 'Hello, world!';
+    my $msg      = 'Hello, Perl!';
     $droid->setClipboard($msg);
     my $echo     = $droid->getClipboard()->{'result'};
     $droid->setClipboard($previous);
@@ -54,7 +54,7 @@ my @tests = (
   } ],
 
   [ speak => sub {
-    my $result = $droid->speak('Hello, world!');
+    my $result = $droid->speak('Hello, Perl!');
     return not defined $result->{'error'};
   } ],
 
@@ -100,7 +100,7 @@ my @tests = (
   } ],
 
   [ make_toast => sub {
-    my $result = $droid->makeToast('Hello, world!');
+    my $result = $droid->makeToast('Hello, Perl!');
     return not defined $result->{'error'};
   } ],
 
@@ -110,7 +110,7 @@ my @tests = (
   } ],
 
   [ notify => sub {
-    my $result = $droid->notify('Hello, world!');
+    my $result = $droid->notify('Hello, Perl!');
     return not defined $result->{'error'};
   } ],
 
