@@ -39,6 +39,7 @@ my @tests = (
 
   # we don't have gdata, we can try Net::Google or others instead
   # but since they aren't bundled, this test would be pointless
+  # TODO (sawyer): this test :)
   [ gdata => sub {} ],
 
   [ gps => sub {
@@ -202,3 +203,4 @@ foreach my $test (@tests) {
   print "Running $name... ";
   print $callback->() ? "PASS\n" : "FAIL\n";
 }
+
