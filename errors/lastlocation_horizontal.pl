@@ -2,22 +2,21 @@ use strict;
 use warnings;
 
 use Android;
-use Time::HiRes 'sleep';
 
-my $droid  = Android->new();
-my $result = $droid->getLastKnownLocation();
+my $droid = Android->new();
+$droid->getLastKnownLocation();
 
 eval {
     local $SIG{'ALRM'} = sub { die "alarm\n" };
-    alarm 10;
+    alarm 12;
     print 'Sleep test... ';
 
-    my $title   = 'Time::HiRes on horizontal';
-    my $message = 'This tests whether Time::HiRes works with this progress bar';
+    my $title   = 'Horizontal';
+    my $message = 'This tests shows a bug with this progress bar';
     $droid->dialogCreateHorizontalProgress( $title, $message, 10 );
     $droid->dialogShow();
-    for my $x ( 0 .. 50 ) {
-      sleep 0.1;
+    for my $x ( 0 .. 10 ) {
+      sleep 1;
       $droid->dialogSetCurrentProgress($x);
     }
 
