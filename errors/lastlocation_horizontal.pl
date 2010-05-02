@@ -1,3 +1,5 @@
+# this script shows how getLastKnownLocation disables the
+# horizontal progress bar.
 use strict;
 use warnings;
 
