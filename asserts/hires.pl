@@ -7,6 +7,7 @@ eval {
     local $SIG{'ALRM'} = sub { die "alarm\n" };
     alarm 1;
     print 'Sleep test... ';
+
     sleep 0.1;
     alarm 0;
 };
