@@ -4,15 +4,11 @@
 use strict;
 use warnings;
 
-# (sawyer) we count on Try::Tiny to be in the scripts folder
-# this should be instead with the other modules and this line could be removed
-use lib '/sdcard/ase/scripts/';
-
 use Android;
 use Try::Tiny;
 
 local $|       = 1;
-our   $VERSION = '0.01';
+our   $VERSION = '0.02';
 my    $droid   = Android->new();
 
 sub event_loop {
