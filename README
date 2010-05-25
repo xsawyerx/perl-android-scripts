@@ -1,8 +1,7 @@
-This will serve as a collection of Perl scripts that run on Android using ASE.
+This is a collection of Perl scripts that run on Android using ASE.
 
 You can install an Android emulator using instructions from the Android
 developers website and then install ASE (Android Scripting Environment).
-
 Once you have it, you can install a Perl interpreter.
 
 Hopefully these scripts will show an example of how to develop on Android with
