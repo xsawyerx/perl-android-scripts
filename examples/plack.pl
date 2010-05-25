@@ -25,6 +25,19 @@
 use strict;
 use warnings;
 
+BEGIN {
+    my @modules = qw/
+        Devel::StackTrace Devel::StackTrace::AsHTML FileHandle HTTP::Body
+        HTTP::Server::Simple Hash::MultiValue PathTools PerlIO Plack Pod::Parser
+        Time::Local Try::Tiny URI integer LWP parent
+    /;
+
+    foreach my $module (@modules) {
+        eval "use $module";
+        $@ and die "You do not have $module installed, sorry.\n"; }
+    }
+}
+
 use Android;
 use Plack::Runner;
 use Plack::Request;
