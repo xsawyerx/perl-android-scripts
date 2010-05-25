@@ -3,6 +3,25 @@
 # Copied here with explicit permission
 # (thank you Stevan :)
 
+# Stevan also notes that he had to make the following modules available
+# in order to make this work:
+# - Devel-StackTrace-1.22.tar.gz
+# - Devel-StackTrace-AsHTML-0.09.tar.gz
+# - FileHandle.pm
+# - HTTP-Body-1.07.tar.gz
+# - HTTP-Server-Simple-0.42.tar.gz
+# - Hash-MultiValue-0.08.tar.gz
+# - PathTools-3.31.tar.gz
+# - PerlIO.pm
+# - Plack-0.9929.tar.gz
+# - Pod-Parser-1.38.tar.gz
+# - Time-Local-1.1901.tar.gz
+# - Try-Tiny-0.04.tar.gz
+# - URI-1.54.tar.gz
+# - integer.pm
+# - libwww-perl-5.834.tar.gz
+# - parent-0.223.tar.gz
+
 use strict;
 use warnings;
 
