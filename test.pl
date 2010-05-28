@@ -192,6 +192,17 @@ my @tests = (
     my $response = $droid->dialogGetResponse()->{'result'};
     return 1;
   } ],
+
+  [ api_pick_contact => sub {
+      my $contact = $droid->pickContact();
+      return $contact->{result};
+  } ],
+
+  [ api_pick_phone => sub {
+      my $phone = $droid->pickPhone();
+      return $phone->{result};
+  } ],
+
 );
 
 foreach my $test (@tests) {
