@@ -205,9 +205,22 @@ my @tests = (
 
 );
 
+my (@passed, @failed);
+
 foreach my $test (@tests) {
+  
   my ( $name, $callback ) = @{$test};
+  
   print "Running $name... ";
-  print $callback->() ? "PASS\n" : "FAIL\n";
+  
+  if ( $callback->() ) {
+    print "PASS\n";
+    push @passed, $name;
+  }
+  else {
+    print "FAIL\n";
+    push @failed, $name;
+  }
 }
 
+printf "Passed %d/%d tests (%d failed)\n", scalar @passed, scalar @tests, scalar @failed;
