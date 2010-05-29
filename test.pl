@@ -12,6 +12,7 @@ local $|       = 1;
 our   $VERSION = '0.03';
 my    $droid   = Android->new();
 my    $count   = 0;
+my    @failed  = ();
 
 sub event_loop {
   for my $i ( 1 .. 10 ) {
@@ -208,12 +209,20 @@ my @tests = (
 );
 
 foreach my $test (@tests) {
-  
   my ( $name, $callback ) = @{$test};
   $count++;
-  print $callback->() ? 'ok' : 'not ok';
+
+  if ( $callback->() ) {
+    print 'ok';
+  } else {
+    print 'not ok';
+    push @failed, $name;
+  }
+
   print " $count - $name\n";
 }
 
 print "1..$count\n";
+
+print map { "# failed test '$_'\n" } @failed;
 
