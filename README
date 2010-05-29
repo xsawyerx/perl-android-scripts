@@ -6,3 +6,14 @@ Once you have it, you can install a Perl interpreter.
 
 Hopefully these scripts will show an example of how to develop on Android with
 Perl.
+
+Directory structure:
+assets:     scripts that assert known issues or odd behaviors
+bugs:       scripts that certain bugs (known asserts, I suppose)
+errors:     same concept
+examples:   actual examples of programs which should be integrated with ASE
+modules:    modules we want to (or have) integrated into ASE
+scriptlets: small little scripts that haven't materialized or stabilized
+Android.pm: the main Android module
+test.pl:    our testing suite
+README:     this file
