@@ -6,6 +6,7 @@ use warnings;
 
 use Android;
 use Try::Tiny;
+use Test::More tests => 24;
 
 local $|       = 1;
 our   $VERSION = '0.02';
@@ -205,22 +206,9 @@ my @tests = (
 
 );
 
-my (@passed, @failed);
-
 foreach my $test (@tests) {
   
   my ( $name, $callback ) = @{$test};
-  
-  print "Running $name... ";
-  
-  if ( $callback->() ) {
-    print "PASS\n";
-    push @passed, $name;
-  }
-  else {
-    print "FAIL\n";
-    push @failed, $name;
-  }
-}
 
-printf "Passed %d/%d tests (%d failed)\n", scalar @passed, scalar @tests, scalar @failed;
+  ok ($callback->(), "running $name...");
+}
