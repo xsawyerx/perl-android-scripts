@@ -8,8 +8,9 @@ use Android;
 use Try::Tiny;
 
 local $|       = 1;
-our   $VERSION = '0.02';
+our   $VERSION = '0.03';
 my    $droid   = Android->new();
+my    $count   = 0;
 
 sub event_loop {
   for my $i ( 1 .. 10 ) {
@@ -195,19 +196,22 @@ my @tests = (
 
   [ api_pick_contact => sub {
       my $contact = $droid->pickContact();
-      return $contact->{result};
+      return $contact->{'result'};
   } ],
 
   [ api_pick_phone => sub {
       my $phone = $droid->pickPhone();
-      return $phone->{result};
+      return $phone->{'result'};
   } ],
 
 );
 
 foreach my $test (@tests) {
   my ( $name, $callback ) = @{$test};
-  print "Running $name... ";
-  print $callback->() ? "PASS\n" : "FAIL\n";
+  $count++;
+  print $callback->() ? 'ok' : 'not ok';
+  print " $count - $name\n";
 }
+
+print "1..$count\n";
 
