@@ -6,6 +6,7 @@ use warnings;
 
 use Android;
 use Try::Tiny;
+use Test::More tests => 24;
 
 local $|       = 1;
 our   $VERSION = '0.03';
@@ -207,6 +208,7 @@ my @tests = (
 );
 
 foreach my $test (@tests) {
+  
   my ( $name, $callback ) = @{$test};
   $count++;
   print $callback->() ? 'ok' : 'not ok';
