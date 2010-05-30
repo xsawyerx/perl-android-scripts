@@ -1,0 +1,24 @@
+This will hopefully add up to specific instructions on how to set up an Android
+environment in order to cross-compile perl - the interpreter - for Android.
+
+This now includes basic instructions Gabor has listed down:
+
+Download the source of Android from http://source.android.com/download and build
+it using "make".
+
+As I understand that will get you the right arm-eabi toolchain. The binary agcc
+comes from there.
+
+the frontend wrapper agcc is in the android-scripting repository in
+tools/agcc/agcc.
+
+In order to build perl in the android-scripting repository:
+    cd perl/src/Cross/
+    sh build-arm-android-sh
+
+and to package the result:
+    sh package-android-sh
+
+I know I got a failure as my sh was linked to dash.
+Running bash worked better but I have not managed to setup the agcc thing.
+
