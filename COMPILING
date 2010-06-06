@@ -22,3 +22,28 @@ and to package the result:
 I know I got a failure as my sh was linked to dash.
 Running bash worked better but I have not managed to setup the agcc thing.
 
+*Alternative Instructions*
+
+** Requirements **
+In order to build perl for ASE, you need:
+* ASE source - includes the Perl interpreter (A.K.A., perl)
+* AGCC - GCC for Arm (A.K.A., agcc)
+* The Arm EABI Toolchain (A.K.A., arm-eabi-toolchain)
+* Java 5 (in case you want to compile Android)
+
+The ASE source can be fetched from the ASE website.
+It includes the agcc wrapper as well under "tools".
+
+The arm-eabi-toolchain can be fetched from this github repo:
+http://github.com/jsnyder/arm-eabi-toolchain
+
+It includes instructions on how to install it on Ubuntu.
+
+These instructions assume you do not need to install or compile Android itself,
+but if you find that you do (whether by choice or force), you need to install
+Java 5 which can be fetched from Sun's java website. Check for "older version"
+of Java.
+
+** Compiling **
+Once you have downloaded all components and installed the arm toolchain, build
+them using the instructions in the repo.
